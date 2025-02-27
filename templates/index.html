@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokémon Info App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Pokémon Info App</h1>
+        <form method="POST">
+            <input type="text" name="pokemon_name" placeholder="Enter Pokémon name or ID" required>
+            <button type="submit">Search</button>
+        </form>
+
+        {% if error %}
+            <p class="error">{{ error }}</p>
+        {% endif %}
+
+        {% if pokemon_data %}
+            <div class="pokemon-details">
+                <h2>{{ pokemon_data.name.upper() }}</h2>
+                <img src="{{ pokemon_data.sprites.front_default }}" alt="{{ pokemon_data.name }}">
+                <p><strong>Type:</strong> 
+                    {% for type in pokemon_data.types %}
+                        <span class="type-badge type-{{ type.type.name }}">{{ type.type.name }}</span>
+                    {% endfor %}
+                </p>
+                <p><strong>Height:</strong> {{ pokemon_data.height }} dm</p>
+                <p><strong>Weight:</strong> {{ pokemon_data.weight }} hg</p>
+                <p><strong>Stats:</strong></p>
+                <ul>
+                    {% for stat in pokemon_data.stats %}
+                        <li>{{ stat.stat.name }}: {{ stat.base_stat }}</li>
+                    {% endfor %}
+                </ul>
+
+                <!-- Evolution Chain Section -->
+                <h3>Evolution Chain</h3>
+                <div class="evolution-chain">
+                    {% if evolution_chain %}
+                        <!-- Render evolution chain here -->
+                    {% else %}
+                        <p>No evolution data available.</p>
+                    {% endif %}
+                </div>
+            </div>
+        {% endif %}
+
+        <!-- Footer -->
+        <footer>
+            <p>Made with ❤️ by [Your Name] | Powered by <a href="https://pokeapi.co/" target="_blank">PokéAPI</a></p>
+        </footer>
+    </div>
+
+    <!-- JavaScript for Additional Interactivity -->
+    <script>
+        // Add hover effect to Pokémon cards
+        const pokemonCards = document.querySelectorAll('.pokemon-details');
+        pokemonCards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'scale(1.02)';
+                card.style.boxShadow = '0 0 20px rgba(0, 0, 0, 0.2)';
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'scale(1)';
+                card.style.boxShadow = '0 0 10px rgba(0, 0, 0, 0.1)';
+            });
+        });
+    </script>
+</body>
+</html>

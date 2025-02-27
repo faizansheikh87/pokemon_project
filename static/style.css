@@ -1,0 +1,160 @@
+/* Dark Theme Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(270deg, #1a1a1a, #2c3e50, #34495e, #2c3e50, #1a1a1a);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    color: #ffffff;
+}
+
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.container {
+    background-color: #2c3e50;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    max-width: 500px;
+    width: 100%;
+}
+
+h1 {
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+input[type="text"] {
+    padding: 10px;
+    width: 70%;
+    border: 1px solid #555;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #34495e;
+    color: #ffffff;
+}
+
+input[type="text"]::placeholder {
+    color: #aaa;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 0 10px #007bff, 0 0 20px #007bff;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+    box-shadow: 0 0 20px #007bff, 0 0 40px #007bff;
+    transform: scale(1.05);
+}
+
+.error {
+    color: #ff6b6b;
+    margin-top: 10px;
+}
+
+.pokemon-details {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #34495e;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pokemon-details img {
+    width: 150px;
+    height: 150px;
+    margin-bottom: 10px;
+}
+
+.type-badge {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 15px;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-right: 5px;
+}
+
+.type-fire { background-color: #ff4422; }
+.type-water { background-color: #3399ff; }
+.type-grass { background-color: #77cc55; }
+.type-electric { background-color: #ffcc33; }
+.type-poison { background-color: #aa5599; }
+.type-flying { background-color: #8899ff; }
+.type-bug { background-color: #aabb22; }
+.type-normal { background-color: #aaaa99; }
+.type-fairy { background-color: #ee99ee; }
+.type-psychic { background-color: #ff5599; }
+.type-rock { background-color: #bbaa66; }
+.type-ground { background-color: #ddbb55; }
+.type-fighting { background-color: #bb5544; }
+.type-ghost { background-color: #6666bb; }
+.type-ice { background-color: #66ccff; }
+.type-dragon { background-color: #7766ee; }
+.type-dark { background-color: #775544; }
+.type-steel { background-color: #aaaabb; }
+
+footer {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #aaa;
+}
+
+footer a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Evolution Chain Styling */
+.evolution-chain {
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.evolution-item {
+    padding: 5px 10px;
+    background-color: #1a1a1a;
+    border-radius: 5px;
+    margin-right: 5px;
+    color: #ffffff;
+}
